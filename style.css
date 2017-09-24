@@ -1,0 +1,190 @@
+@font-face {
+	font-family: "text__header"; 
+	src: url("./Bitter-Regular.ttf") format("truetype");
+	font-style: normal; 
+	font-weight: normal; 
+}
+
+@font-face {
+	font-family: "text__paragraph"; 
+	src: url("./Muli-Regular.ttf") format("truetype");
+	font-style: normal; 
+	font-weight: normal; 
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.left-half {
+	float: left;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.photo {
+	width: 100%;
+	height: 100%;	
+	overflow: hidden;
+}
+
+.right-half	{
+	float: right;
+	width: 50%;
+	height: 100%;
+}
+
+.text {
+	float: relative;
+	height: 80%;
+	width: 80%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 30%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.text__paragraph, .text__header {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+}
+
+.text__header {
+	color: #6A3327;
+	font-family: text__header;
+	font-size: 32px;
+	margin-bottom: 15px;
+}
+
+.text__paragraph {
+	color: #340F0F;
+	font-family: text__paragraph;
+	font-size: 16px;
+	margin-bottom: 3px;
+}
+
+.text__logo {
+	width: 9%;
+	margin: 1.5%;
+	margin-top: 7%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #6A3327;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.next {
+  right: 0;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.3s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.hide {
+	display: none;
+}
+
+.contacts {
+	text-align: center;
+}
+
+{box-sizing:border-box}
+
+.container {
+	width: 70%;
+	background-color: #ddd;
+	line-height: 15px;
+	font-family: text__paragraph;
+	font-size: 10pt;
+	background-color: #ddd;
+	margin-bottom: 4px;
+}
+
+.container__skills {
+	text-align: right;
+	color: white;
+	background-color: #4caf50;
+}
+
+@keyframes html {
+	0% { width: 0px; }
+	100% { width: 70%; }
+}
+
+.html {
+	width: 70%;
+	animation: html 1s ease-out;
+}
+
+@keyframes css {
+	0% { width: 0px; }
+	100% { width: 55%; }
+}
+
+.css {
+	width: 55%;
+	animation: css 1s ease-out;
+}
+
+@keyframes java {
+	0% { width: 0px; }
+	100% { width: 40%; }
+}
+
+.java {
+	width: 40%;
+	animation: java 1s ease-out;
+}
+
+@keyframes javascript {
+	0% { width: 0px; }
+	100% { width: 20%; }
+}
+
+.javascript {
+	width: 20%;
+	animation: javascript 1s ease-out;
+}
+
+@keyframes git {
+	0% { width: 0px; }
+	100% { width: 40%; }
+}
+
+.git {
+	width: 40%;
+	animation: git 1s ease-out;
+}
+
+@keyframes selenium {
+	0% { width: 0px; }
+	100% { width: 45%; }
+}
+
+.selenium {
+	width: 45%;
+	animation: selenium 1s ease-out;
+}
