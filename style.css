@@ -29,7 +29,7 @@ body {
 }
 
 .photo {
-	width: 100%;
+	width: auto;
 	height: 100%;	
 	overflow: hidden;
 }
@@ -41,7 +41,6 @@ body {
 }
 
 .text {
-	float: relative;
 	height: 80%;
 	width: 80%;
 	margin-left: 5%;
@@ -111,6 +110,7 @@ body {
 	text-align: center;
 }
 
+/*skill-bars*/
 {box-sizing:border-box}
 
 .container {
@@ -188,3 +188,95 @@ body {
 	width: 45%;
 	animation: selenium 1s ease-out;
 }
+
+/*responsive*/
+@media screen and (max-width:1024px) {
+	
+	html, body {
+		position: relative;
+		height: 100%;
+		width: 100%;
+	}
+	
+	.left-half {
+		position: fixed;
+		width: 100%;
+		height: 50%;	
+		overflow: hidden;
+	}
+	
+	.photo {
+		position: absolute;
+		width: 100%;
+		height: auto;	
+		overflow: hidden;	
+	}
+	
+	.carousel {
+		position: fixed;
+		width: 100%;
+		top: 50%;
+		height: 50%;
+	}
+	
+	.right-half {
+		position: absolute;
+		width: 90%;
+		height: 100%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}	
+	
+	.text {
+		overflow: scroll;
+		margin-top: 15px;
+		padding: 0px;
+		width: 90%;
+		height: 100%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	
+	.prev, .next {
+		position: fixed;
+		top: 53%;
+	}
+	
+	.text__header {
+		color: #6A3327;
+		font-family: text__header;
+		font-size: 3.5em;
+		margin-bottom: 15px;
+		text-align: center;
+	}
+
+	.text__paragraph {
+		color: #340F0F;
+		font-family: text__paragraph;
+		font-size: 2.25em;
+		margin-bottom: 3px;
+		text-align: justify; 
+	}
+	
+	.container {
+		width: 100%;
+	}
+	
+	.contacts {
+		text-align: center;
+	}
+	
+}
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
