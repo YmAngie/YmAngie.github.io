@@ -1,0 +1,262 @@
+@font-face {
+	font-family: "text__header"; 
+	src: url("./Bitter-Regular.ttf") format("truetype");
+	font-style: normal; 
+	font-weight: normal; 
+}
+
+@font-face {
+	font-family: "text__paragraph"; 
+	src: url("./Muli-Regular.ttf") format("truetype");
+	font-style: normal; 
+	font-weight: normal; 
+}
+
+@header-color: #6A3327;
+@paragraph-color: #340F0F;
+@skill-color: #4caf50;
+@skill-background-color: #ddd;
+@percent-20: 20%;
+@percent-40: 40%;
+@percent-45: 45%;
+@percent-55: 55%;
+@percent-70: 70%;
+
+html {
+	height: 100%;
+	width: 100%;
+
+	body {
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+	}
+}
+
+.left-half {
+	float: left;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	@media screen and (max-width:1024px) {
+		position: fixed;
+		width: 100%;
+		height: 50%;	
+	}
+	
+	.photo {
+		width: auto;
+		height: 100%;	
+		overflow: hidden;
+		@media screen and (max-width:1024px) {
+			position: absolute;
+			width: 100%;
+			height: auto;	
+		}
+	}
+}
+
+.right-half	{
+	float: right;
+	width: 50%;
+	height: 100%;
+	@media screen and (max-width:1024px) {
+		position: fixed;
+		width: 90%;
+		top: 50%;
+		height: 50%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	.text {
+		height: 50%;
+		width: 80%;
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-top: 30%;
+		padding-left: 5%;
+		padding-right: 5%;
+		@media screen and (max-width:1024px) {
+			overflow: scroll;
+			margin-top: 15px;
+			padding: 0px;
+			width: 90%;
+			height: 100%;
+		}	
+
+		.text__header, .text__paragraph {
+			margin: 0px;
+			border: 0px;
+			padding: 0px;
+		}
+
+		.text__header {
+			color: @header-color;
+			font-family: text__header;
+			font-size: 2.5em;
+			margin-bottom: 15px;
+			@media (max-width:1024px) {
+				font-size: 2.5em;
+				text-align: center;
+			}
+			@media only screen and (max-device-width: 800px) {
+				font-size:3.5em;
+			}
+		}
+
+		.text__paragraph {
+			color: @paragraph-color;
+			font-family: text__paragraph;
+			font-size: 1.0em;
+			margin-bottom: 3px;
+			text-align: justify;
+			@media only screen and (min-device-width:0px)  { 
+				font-size: 2.25em;
+			}
+			@media only screen and (min-device-width:320px)  { 
+				font-size: 2.25em;
+			}
+			@media only screen and (min-device-width:481px)  { 
+				font-size: 1.8em;
+			}
+			@media only screen and (min-device-width:641px)  {
+				font-size: 1.3em;
+			}
+			@media only screen and (min-device-width:961px)  { 
+				font-size: 1.1em;
+			}
+			@media only screen and (min-device-width:1025px) { 
+				font-size: 1.0em;
+			}
+			
+			.text__logo {
+				width: 9%;
+				margin: 1.5%;
+				margin-top: 7%;
+			}
+		}
+
+		.contacts {
+			text-align: center;
+		}
+	}
+}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: @header-color;
+	font-weight: bold;
+	font-size: 18px;
+	@media screen and (max-width:1024px) {
+		position: fixed;
+		top: 52.5%;
+	}
+}
+
+.next {
+	right: 0;
+}
+
+.hide {
+	display: none;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/*skill-bars*/
+.container {
+	width: 70%;
+	background-color: @skill-background-color;
+	line-height: 15px;
+	font-family: text__paragraph;
+	font-size: 10pt;
+	margin-bottom: 4px;
+	@media screen and (max-width:1024px) {
+		width: 100%;
+	}
+
+	.container__skills {
+		text-align: right;
+		color: white;
+		background-color: @skill-color;
+	}
+	
+	.html {
+		width: @percent-70;
+		animation: html 1s ease-out;
+	}
+	
+	.css {
+		width: @percent-55;
+		animation: css 1s ease-out;
+	}
+	
+	.javascript {
+		width: @percent-20;
+		animation: javascript 1s ease-out;
+	}
+
+	.java {
+		width: @percent-40;
+		animation: java 1s ease-out;
+	}
+	
+	.selenium {
+		width: @percent-45;
+		animation: selenium 1s ease-out;
+	}
+	
+	.git {
+		width: @percent-40;
+		animation: git 1s ease-out;
+	}
+}
+
+@keyframes html {
+	0% { width: 0px; }
+	100% { width: @percent-70; }
+}
+
+@keyframes css {
+	0% { width: 0px; }
+	100% { width: @percent-55; }
+}
+
+@keyframes java {
+	0% { width: 0px; }
+	100% { width: @percent-40; }
+}
+
+@keyframes javascript {
+	0% { width: 0px; }
+	100% { width: @percent-20; }
+}
+
+@keyframes git {
+	0% { width: 0px; }
+	100% { width: @percent-40; }
+}
+
+@keyframes selenium {
+	0% { width: 0px; }
+	100% { width: @percent-45; }
+}
+

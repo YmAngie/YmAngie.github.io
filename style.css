@@ -1,82 +1,152 @@
 @font-face {
-	font-family: "text__header"; 
-	src: url("./Bitter-Regular.ttf") format("truetype");
-	font-style: normal; 
-	font-weight: normal; 
+  font-family: "text__header";
+  src: url("Bitter-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
-
 @font-face {
-	font-family: "text__paragraph"; 
-	src: url("./Muli-Regular.ttf") format("truetype");
-	font-style: normal; 
-	font-weight: normal; 
+  font-family: "text__paragraph";
+  src: url("Muli-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
-
-html, body {
-	height: 100%;
+html {
+  height: 100%;
+  width: 100%;
 }
-
-body {
-	margin: 0px;
-	padding: 0px;
+html body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
-
 .left-half {
-	float: left;
-	width: 50%;
-	height: 100%;
-	overflow: hidden;
+  float: left;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
 }
-
-.photo {
-	width: auto;
-	height: 100%;	
-	overflow: hidden;
+@media screen and (max-width: 1024px) {
+  .left-half {
+    position: fixed;
+    width: 100%;
+    height: 50%;
+  }
 }
-
-.right-half	{
-	float: right;
-	width: 50%;
-	height: 100%;
+.left-half .photo {
+  width: auto;
+  height: 100%;
+  overflow: hidden;
 }
-
-.text {
-	height: 80%;
-	width: 80%;
-	margin-left: 5%;
-	margin-right: 5%;
-	margin-top: 30%;
-	padding-left: 5%;
-	padding-right: 5%;
+@media screen and (max-width: 1024px) {
+  .left-half .photo {
+    position: absolute;
+    width: 100%;
+    height: auto;
+  }
 }
-
-.text__paragraph, .text__header {
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
+.right-half {
+  float: right;
+  width: 50%;
+  height: 100%;
 }
-
-.text__header {
-	color: #6A3327;
-	font-family: text__header;
-	font-size: 32px;
-	margin-bottom: 15px;
+@media screen and (max-width: 1024px) {
+  .right-half {
+    position: fixed;
+    width: 90%;
+    top: 50%;
+    height: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
-
-.text__paragraph {
-	color: #340F0F;
-	font-family: text__paragraph;
-	font-size: 16px;
-	margin-bottom: 3px;
+.right-half .text {
+  height: 50%;
+  width: 80%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
-
-.text__logo {
-	width: 9%;
-	margin: 1.5%;
-	margin-top: 7%;
+@media screen and (max-width: 1024px) {
+  .right-half .text {
+    overflow: scroll;
+    margin-top: 15px;
+    padding: 0px;
+    width: 90%;
+    height: 100%;
+  }
 }
-
-.prev, .next {
+.right-half .text .text__header,
+.right-half .text .text__paragraph {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+.right-half .text .text__header {
+  color: #6A3327;
+  font-family: text__header;
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+@media (max-width: 1024px) {
+  .right-half .text .text__header {
+    font-size: 2.5em;
+    text-align: center;
+  }
+}
+@media only screen and (max-device-width: 800px) {
+  .right-half .text .text__header {
+    font-size: 3.5em;
+  }
+}
+.right-half .text .text__paragraph {
+  color: #340F0F;
+  font-family: text__paragraph;
+  font-size: 1.0em;
+  margin-bottom: 3px;
+  text-align: justify;
+}
+@media only screen and (min-device-width: 0px) {
+  .right-half .text .text__paragraph {
+    font-size: 2.25em;
+  }
+}
+@media only screen and (min-device-width: 320px) {
+  .right-half .text .text__paragraph {
+    font-size: 2.25em;
+  }
+}
+@media only screen and (min-device-width: 481px) {
+  .right-half .text .text__paragraph {
+    font-size: 1.8em;
+  }
+}
+@media only screen and (min-device-width: 641px) {
+  .right-half .text .text__paragraph {
+    font-size: 1.3em;
+  }
+}
+@media only screen and (min-device-width: 961px) {
+  .right-half .text .text__paragraph {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (min-device-width: 1025px) {
+  .right-half .text .text__paragraph {
+    font-size: 1.0em;
+  }
+}
+.right-half .text .text__paragraph .text__logo {
+  width: 9%;
+  margin: 1.5%;
+  margin-top: 7%;
+}
+.right-half .text .contacts {
+  text-align: center;
+}
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -87,196 +157,176 @@ body {
   font-weight: bold;
   font-size: 18px;
 }
-
+@media screen and (max-width: 1024px) {
+  .prev,
+  .next {
+    position: fixed;
+    top: 52.5%;
+  }
+}
 .next {
   right: 0;
 }
-
+.hide {
+  display: none;
+}
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.3s;
+  -webkit-animation-duration: 0.5s;
 }
-
 @-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-.hide {
-	display: none;
+::-webkit-scrollbar {
+  display: none;
 }
-
-.contacts {
-	text-align: center;
-}
-
 /*skill-bars*/
-{box-sizing:border-box}
-
 .container {
-	width: 70%;
-	background-color: #ddd;
-	line-height: 15px;
-	font-family: text__paragraph;
-	font-size: 10pt;
-	background-color: #ddd;
-	margin-bottom: 4px;
+  width: 70%;
+  background-color: #ddd;
+  line-height: 15px;
+  font-family: text__paragraph;
+  font-size: 10pt;
+  margin-bottom: 4px;
 }
-
-.container__skills {
-	text-align: right;
-	color: white;
-	background-color: #4caf50;
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
 }
-
+.container .container__skills {
+  text-align: right;
+  color: white;
+  background-color: #4caf50;
+}
+.container .html {
+  width: 70%;
+  -webkit-animation: html 1s ease-out;
+  animation: html 1s ease-out;
+}
+.container .css {
+  width: 55%;
+  -webkit-animation: css 1s ease-out;
+  animation: css 1s ease-out;
+}
+.container .javascript {
+  width: 20%;
+  -webkit-animation: javascript 1s ease-out;
+  animation: javascript 1s ease-out;
+}
+.container .java {
+  width: 40%;
+  -webkit-animation: java 1s ease-out;
+  animation: java 1s ease-out;
+}
+.container .selenium {
+  width: 45%;
+  -webkit-animation: selenium 1s ease-out;
+  animation: selenium 1s ease-out;
+}
+.container .git {
+  width: 40%;
+  -webkit-animation: git 1s ease-out;
+  animation: git 1s ease-out;
+}
+@-webkit-keyframes html {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 70%;
+  }
+}
 @keyframes html {
-	0% { width: 0px; }
-	100% { width: 70%; }
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 70%;
+  }
 }
-
-.html {
-	width: 70%;
-	animation: html 1s ease-out;
+@-webkit-keyframes css {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 55%;
+  }
 }
-
 @keyframes css {
-	0% { width: 0px; }
-	100% { width: 55%; }
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 55%;
+  }
 }
-
-.css {
-	width: 55%;
-	animation: css 1s ease-out;
+@-webkit-keyframes java {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 40%;
+  }
 }
-
 @keyframes java {
-	0% { width: 0px; }
-	100% { width: 40%; }
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 40%;
+  }
 }
-
-.java {
-	width: 40%;
-	animation: java 1s ease-out;
+@-webkit-keyframes javascript {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 20%;
+  }
 }
-
 @keyframes javascript {
-	0% { width: 0px; }
-	100% { width: 20%; }
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 20%;
+  }
 }
-
-.javascript {
-	width: 20%;
-	animation: javascript 1s ease-out;
+@-webkit-keyframes git {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 40%;
+  }
 }
-
 @keyframes git {
-	0% { width: 0px; }
-	100% { width: 40%; }
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 40%;
+  }
 }
-
-.git {
-	width: 40%;
-	animation: git 1s ease-out;
+@-webkit-keyframes selenium {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 45%;
+  }
 }
-
 @keyframes selenium {
-	0% { width: 0px; }
-	100% { width: 45%; }
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 45%;
+  }
 }
-
-.selenium {
-	width: 45%;
-	animation: selenium 1s ease-out;
-}
-
-/*responsive*/
-@media screen and (max-width:1024px) {
-	
-	html, body {
-		position: relative;
-		height: 100%;
-		width: 100%;
-	}
-	
-	.left-half {
-		position: fixed;
-		width: 100%;
-		height: 50%;	
-		overflow: hidden;
-	}
-	
-	.photo {
-		position: absolute;
-		width: 100%;
-		height: auto;	
-		overflow: hidden;	
-	}
-	
-	.carousel {
-		position: fixed;
-		width: 100%;
-		top: 50%;
-		height: 50%;
-	}
-	
-	.right-half {
-		position: absolute;
-		width: 90%;
-		height: 100%;
-		margin-left: 5%;
-		margin-right: 5%;
-	}	
-	
-	.text {
-		overflow: scroll;
-		margin-top: 15px;
-		padding: 0px;
-		width: 90%;
-		height: 100%;
-		margin-left: 5%;
-		margin-right: 5%;
-	}
-	
-	.prev, .next {
-		position: fixed;
-		top: 53%;
-	}
-	
-	.text__header {
-		color: #6A3327;
-		font-family: text__header;
-		font-size: 3.5em;
-		margin-bottom: 15px;
-		text-align: center;
-	}
-
-	.text__paragraph {
-		color: #340F0F;
-		font-family: text__paragraph;
-		font-size: 2.25em;
-		margin-bottom: 3px;
-		text-align: justify; 
-	}
-	
-	.container {
-		width: 100%;
-	}
-	
-	.contacts {
-		text-align: center;
-	}
-	
-}
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
